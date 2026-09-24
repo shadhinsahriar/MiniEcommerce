@@ -3,11 +3,15 @@ package com.shadhin.miniecommerce.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class User {
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
     @Id
     @GeneratedValue()
     private int id;

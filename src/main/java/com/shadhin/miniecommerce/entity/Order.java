@@ -4,9 +4,12 @@ import com.shadhin.miniecommerce.enums.OrderStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Order {
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItem;
     @Id
     @GeneratedValue()
     private int id;

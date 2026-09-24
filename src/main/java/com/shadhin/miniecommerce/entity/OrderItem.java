@@ -10,6 +10,7 @@ public class OrderItem {
     @Id
     @GeneratedValue()
     private int id;
+    @ManyToOne
     private Order order;
     @ManyToOne
     private Product product;
